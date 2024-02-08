@@ -1,0 +1,21 @@
+#controls {
+    margin-bottom: 20px;
+}
+
+#bounce-area {
+    position: relative;
+    width: 1200px; /* Ancho del área de rebote */
+    height: 600px; /* Altura del área de rebote */
+    border: 2px solid black; /* Borde del área de rebote */
+    overflow: hidden; /* Evita que el círculo se salga del área de rebote */
+}
+
+#circle {
+    position: absolute;
+    width: 50px; /* Ancho inicial del círculo */
+    height: 50px; /* Altura inicial del círculo */
+    border-radius: 50%; /* Forma del círculo */
+    background-color: red; /* Color inicial del círculo */
+    left: 0; /* Posición inicial horizontal */
+    top: 0; /* Posición inicial vertical */
+}
