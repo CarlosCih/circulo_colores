@@ -8,14 +8,17 @@
 </head>
 <body>
     <div id="controls">
-        <label for="size">Tamaño:</label>
-        <input type="range" id="sizeRange" min="20" max="400" value="200">
+        <label for="width">Ancho:</label>
+        <input type="range" id="widthRange" min="20" max="400" value="200">
+        <label for="height">Alto:</label>
+        <input type="range" id="heightRange" min="20" max="400" value="200">
         <br>
         <label for="color">Color:</label>
         <input type="color" id="color" value="#ff0000">
         <span id="color-preview"></span>
+        <br><br>
+        <button id="toggleButton">Desaparecer/Aparecer</button>
     </div>
-
     <div id="bounce-area">
         <div id="circle" onwheel="changeSizeWithScroll(event)"></div>
     </div>

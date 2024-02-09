@@ -26,17 +26,25 @@ function moveCircle() {
     circle.style.top = y + "px";
 }
 
-function changeCircle() {
-    var size;
-    if (document.getElementById("sizeRange").style.display !== "none") {
-        size = document.getElementById("sizeRange").value + "px";
+function changeCircleSize() {
+    var width = document.getElementById("widthRange").value + "px";
+    var height = document.getElementById("heightRange").value + "px";
+    
+    circle.style.width = width;
+    circle.style.height = height;
+}
+
+function toggleCircle() {
+    if (circle.style.display === "none") {
+        circle.style.display = "block";
     } else {
-        size = document.getElementById("sizeInput").value + "px";
+        circle.style.display = "none";
     }
+}
+
+function changeCircle() {
     var color = document.getElementById("color").value;
 
-    circle.style.width = size;
-    circle.style.height = size;
     circle.style.backgroundColor = color;
 
     var colorPreview = document.getElementById("color-preview");
@@ -47,9 +55,11 @@ window.onload = function () {
     var color = document.getElementById("color").value;
     var colorPreview = document.getElementById("color-preview");
     colorPreview.style.backgroundColor = color;
+
+    setInterval(moveCircle, 30); // Mover el círculo cada 30 milisegundos
 };
 
-setInterval(moveCircle, 30); // Mover el círculo cada 30 milisegundos
-
-document.getElementById("sizeRange").addEventListener("input", changeCircle);
+document.getElementById("widthRange").addEventListener("input", changeCircleSize);
+document.getElementById("heightRange").addEventListener("input", changeCircleSize);
 document.getElementById("color").addEventListener("input", changeCircle);
+document.getElementById("toggleButton").addEventListener("click", toggleCircle);
